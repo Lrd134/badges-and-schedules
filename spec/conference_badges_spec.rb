@@ -108,3 +108,37 @@ TEXT
   end
 
 end
+
+def badge_maker(name)
+  "Hello, my name is #{name}."
+end
+
+def batch_badge_creator(array_names)
+  arr = []
+  array_names.each {|i| arr << "Hello, my name is #{i}."}
+  arr
+end
+
+def assign_rooms(list)
+  arr = []
+  curr_room = 1
+  list.each do
+    |i| arr << "Hello, #{i}! You'll be assigned to room #{curr_room}!"
+    curr_room += 1
+    curr_room = 1 if curr_room > 7
+  end
+  arr
+end
+
+def printer(array_of_names)
+  badges = []
+  rooms = []
+  badges = batch_badge_creator(array_of_names)
+  rooms = assign_rooms(array_of_names)
+  badges.each do |i|
+    puts i
+  end
+  rooms.each do |i|
+    puts i
+  end
+end
